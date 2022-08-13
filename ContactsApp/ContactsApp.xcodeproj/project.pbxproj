@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		18B2507E28A6BB7A0057C380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2507D28A6BB7A0057C380 /* AppDelegate.swift */; };
 		18B2508028A6BB7A0057C380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2507F28A6BB7A0057C380 /* SceneDelegate.swift */; };
-		18B2508228A6BB7A0057C380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2508128A6BB7A0057C380 /* ViewController.swift */; };
 		18B2508528A6BB7A0057C380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B2508328A6BB7A0057C380 /* Main.storyboard */; };
 		18B2508728A6BB7C0057C380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B2508628A6BB7C0057C380 /* Assets.xcassets */; };
 		18B2508A28A6BB7C0057C380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B2508828A6BB7C0057C380 /* LaunchScreen.storyboard */; };
+		18B2509528A6BE140057C380 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2509428A6BE140057C380 /* TableViewController.swift */; };
+		18B2509828A6BF020057C380 /* DataPersons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2509728A6BF020057C380 /* DataPersons.swift */; };
+		18B2509B28A6C25D0057C380 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2509A28A6C25D0057C380 /* Person.swift */; };
+		18F6734028A7AA6E005A9B27 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6733F28A7AA6E005A9B27 /* ContactViewController.swift */; };
+		18F6734328A7AB48005A9B27 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6734228A7AB48005A9B27 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18B2507A28A6BB7A0057C380 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B2507D28A6BB7A0057C380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B2507F28A6BB7A0057C380 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18B2508128A6BB7A0057C380 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18B2508428A6BB7A0057C380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18B2508628A6BB7C0057C380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B2508928A6BB7C0057C380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B2508B28A6BB7C0057C380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B2509428A6BE140057C380 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		18B2509728A6BF020057C380 /* DataPersons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersons.swift; sourceTree = "<group>"; };
+		18B2509A28A6C25D0057C380 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		18F6733F28A7AA6E005A9B27 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		18F6734228A7AB48005A9B27 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,12 @@
 		18B2507C28A6BB7A0057C380 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
-				18B2509128A6BBA30057C380 /* Delegates */,
+				18F6734128A7AB2F005A9B27 /* Extensions */,
+				18B2509928A6C2540057C380 /* Models */,
+				18B2509628A6BEE80057C380 /* DataPersons */,
 				18B2509228A6BBA80057C380 /* Controllers */,
 				18B2509328A6BBBA0057C380 /* Views */,
+				18B2509128A6BBA30057C380 /* Delegates */,
 				18B2508628A6BB7C0057C380 /* Assets.xcassets */,
 				18B2508B28A6BB7C0057C380 /* Info.plist */,
 			);
@@ -77,7 +88,8 @@
 		18B2509228A6BBA80057C380 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18B2508128A6BB7A0057C380 /* ViewController.swift */,
+				18B2509428A6BE140057C380 /* TableViewController.swift */,
+				18F6733F28A7AA6E005A9B27 /* ContactViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +101,30 @@
 				18B2508828A6BB7C0057C380 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		18B2509628A6BEE80057C380 /* DataPersons */ = {
+			isa = PBXGroup;
+			children = (
+				18B2509728A6BF020057C380 /* DataPersons.swift */,
+			);
+			path = DataPersons;
+			sourceTree = "<group>";
+		};
+		18B2509928A6C2540057C380 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18B2509A28A6C25D0057C380 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18F6734128A7AB2F005A9B27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18F6734228A7AB48005A9B27 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B2508228A6BB7A0057C380 /* ViewController.swift in Sources */,
+				18B2509B28A6C25D0057C380 /* Person.swift in Sources */,
+				18F6734028A7AA6E005A9B27 /* ContactViewController.swift in Sources */,
 				18B2507E28A6BB7A0057C380 /* AppDelegate.swift in Sources */,
+				18F6734328A7AB48005A9B27 /* UIViewControllerExtension.swift in Sources */,
+				18B2509828A6BF020057C380 /* DataPersons.swift in Sources */,
 				18B2508028A6BB7A0057C380 /* SceneDelegate.swift in Sources */,
+				18B2509528A6BE140057C380 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
