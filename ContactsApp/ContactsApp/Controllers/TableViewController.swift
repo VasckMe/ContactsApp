@@ -11,25 +11,12 @@ protocol UpdateCell {
     func updateCell(person: Person)
 }
 
-class TableViewController: UITableViewController, UpdateCell {
-    func updateCell(person: Person) {
-        if
-            let indexPathMy = tableView.indexPathForSelectedRow
-        {
-            DataPersons.personArray.remove(at: indexPathMy.row)
-            DataPersons.personArray.insert(person, at: indexPathMy.row)
-            tableView.reloadData()
-        }
-    }
-    
-
-    
-    
+class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataPersons.fillPersonArray()
         // Uncomment the following line to preserve selection between presentations
-         self.clearsSelectionOnViewWillAppear = false
+//         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -100,5 +87,16 @@ class TableViewController: UITableViewController, UpdateCell {
             contactVC.delegate = self
         }
     }
+}
 
+extension TableViewController: UpdateCell {
+    func updateCell(person: Person) {
+        if
+            let indexPathMy = tableView.indexPathForSelectedRow
+        {
+            DataPersons.personArray.remove(at: indexPathMy.row)
+            DataPersons.personArray.insert(person, at: indexPathMy.row)
+            tableView.reloadData()
+        }
+    }
 }

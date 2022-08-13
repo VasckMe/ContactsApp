@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UpdateContact {
+    func updateContact(model: Person)
+}
+
 class ContactViewController: UIViewController {
 
     @IBOutlet private weak var phoneNumber: UILabel!
@@ -38,14 +42,14 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func extraOutCallButton() {
-//        alert(title: "Sorry =(",
-//              message: "This function can not be used, please stay with us for update!",
-//              style: .alert)
-        let model = Person(name: "Rak", surname: "Omar", email: "a", phone: "b")
-        delegate?.updateCell(person: model)
-        navigationController?.popViewController(animated: true)
+        alert(title: "Sorry =(",
+              message: "This function can not be used, please stay with us for update!",
+              style: .alert)
     }
     
+    @IBAction func editButton() {
+        performSegue(withIdentifier: "GoToEditContactVC", sender: nil)
+    }
     private func fillPersonData() {
         if let unwrapModel = model {
             title = unwrapModel.name + " " + unwrapModel.surname
@@ -53,14 +57,28 @@ class ContactViewController: UIViewController {
             emailAddress.text = unwrapModel.email
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if
+            let editContactVC = segue.destination as? EditContactViewController,
+            let unwModel = model
+        {
+            let person = Person(name: unwModel.name,
+                                surname: unwModel.surname,
+                                email: unwModel.email,
+                                phone: unwModel.phone)
+            editContactVC.model = person
+        }
     }
-    */
+}
 
+extension ContactViewController: UpdateContact {
+    func updateContact(model: Person) {
+        title = model.name + " " + model.surname
+        phoneNumber.text = model.phone
+        emailAddress.text = model.email
+    }
 }
