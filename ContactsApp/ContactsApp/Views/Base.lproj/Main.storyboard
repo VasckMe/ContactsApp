@@ -13,13 +13,14 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EEj-sr-GM1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="person.3.sequence" catalog="system" id="YN3-lz-Cfz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YN3-lz-Cfz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="RZF-nc-Sha" kind="relationship" relationship="viewControllers" id="yh6-ig-V0D"/>
+                        <segue destination="48d-tr-9qM" kind="relationship" relationship="viewControllers" id="zsx-af-54u"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41N-n1-f8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -238,13 +239,12 @@
         <scene sceneID="48k-ou-74F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RZF-nc-Sha" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" image="person.3.sequence.fill" catalog="system" id="LQd-gJ-KEY"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.3.sequence" catalog="system" selectedImage="person.3.sequence.fill" id="LQd-gJ-KEY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sAr-4n-35w">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
-                        <color key="barTintColor" systemColor="systemOrangeColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -260,6 +260,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnB-G1-2NY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="726" y="66"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="OyB-IN-ky6">
+            <objects>
+                <viewController id="48d-tr-9qM" customClass="PersonsListViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bnl-1Q-iYb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YO4-aA-tM3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" systemColor="systemYellowColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5fa-On-eRB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YO4-aA-tM3" firstAttribute="leading" secondItem="5fa-On-eRB" secondAttribute="leading" id="Ggb-r3-7PA"/>
+                            <constraint firstItem="YO4-aA-tM3" firstAttribute="trailing" secondItem="5fa-On-eRB" secondAttribute="trailing" id="ZKY-4m-O4u"/>
+                            <constraint firstItem="YO4-aA-tM3" firstAttribute="bottom" secondItem="5fa-On-eRB" secondAttribute="bottom" id="gf8-l1-wa1"/>
+                            <constraint firstItem="YO4-aA-tM3" firstAttribute="top" secondItem="5fa-On-eRB" secondAttribute="top" id="woq-0a-Vc5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="book" catalog="system" selectedImage="book.fill" id="cdo-KF-iEs"/>
+                    <connections>
+                        <outlet property="tableView" destination="YO4-aA-tM3" id="ZsX-2k-Eds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfW-25-WZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="760"/>
         </scene>
         <!--Name + Surname-->
         <scene sceneID="ifD-oR-tSO">
@@ -423,16 +458,24 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3.sequence" catalog="system" width="128" height="59"/>
         <image name="person.3.sequence.fill" catalog="system" width="128" height="58"/>
         <image name="phone.arrow.up.right" catalog="system" width="128" height="115"/>
         <image name="video" catalog="system" width="128" height="83"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

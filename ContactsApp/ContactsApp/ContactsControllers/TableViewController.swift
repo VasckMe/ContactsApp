@@ -33,6 +33,7 @@ class TableViewController: UITableViewController {
         let user = DataPersons.personArray[indexPath.row]
         cell.textLabel?.text = user.name + " " + user.surname
         cell.textLabel?.textColor = .white
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
         return cell
     }
         
