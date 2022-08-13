@@ -39,7 +39,7 @@ extension PersonsListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as? UITableViewHeaderFooterView
-        header?.contentView.backgroundColor = .white
+        header?.contentView.backgroundColor = .lightGray
         header?.textLabel?.textColor = .black
         header?.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     }
