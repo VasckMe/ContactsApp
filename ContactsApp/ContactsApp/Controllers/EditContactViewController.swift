@@ -8,31 +8,53 @@
 import UIKit
 
 class EditContactViewController: UIViewController {
-
-    @IBOutlet weak var clearTextButtonOutlet: UIButton!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var surnameTextField: UITextField!
     
+    // MARK: IBOutlets
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var phoneTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var surnameTextField: UITextField!
+    @IBOutlet private weak var doneButtonOutlet: UIButton!
+    
+    // MARK: Delegates and Properties
     var model: Person?
+    var delegate: UpdateContact?
     
-    var buttonMy = UIButton(type: .custom)
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPersonData()
-        setupTextFields()
     }
     
-    
-    private func setupTextFields() {
-        nameTextField.rightView = clearTextButtonOutlet
-        nameTextField.rightViewMode = .whileEditing
+    // MARK: IBActions
+    @IBAction func nameTextFieldAction() {
+        checkPersons()
+    }
+    @IBAction func surnameTextFieldAction() {
+        checkPersons()
+    }
+    @IBAction func phoneTextFieldAction() {
+        checkPersons()
+    }
+    @IBAction func emailTextFieldAction() {
+        checkPersons()
+    }
+    @IBAction func doneButtonAction() {
+        let name = nameTextField.text!
+        let surname = surnameTextField.text!
+        let email = emailTextField.text!
+        let phone = phoneTextField.text!
         
-        surnameTextField.rightView = clearTextButtonOutlet
-        surnameTextField.rightViewMode = .whileEditing
+        let person = Person(name: name,
+                            surname: surname,
+                            email: email,
+                            phone: phone)
+        
+        delegate?.updateContact(model: person)
+        navigationController?.popViewController(animated: true)
     }
-
+    
+    // MARK: Functions
     private func setupPersonData() {
         if
             let person = model
@@ -43,22 +65,22 @@ class EditContactViewController: UIViewController {
             phoneTextField.text = person.phone
         }
     }
-    
     private func checkPersons() {
-//        let newPerson = Person(name: <#T##String#>, surname: <#T##String#>, email: <#T##String#>, phone: <#T##String#>)
-//        if
-//            let newPer
-//            let person = model,
-            
+        if
+            let name = nameTextField.text,
+            !name.isEmpty,
+            let surname = surnameTextField.text,
+            !surname.isEmpty,
+            let email = emailTextField.text,
+            !email.isEmpty,
+            let phone = phoneTextField.text,
+            !phone.isEmpty
+        {
+            let newModel = Person(name: name, surname: surname, email: email, phone: phone)
+            doneButtonOutlet.isEnabled = model != newModel
+        } else {
+            doneButtonOutlet.isEnabled = false
+            alert(title: "Warning!", message: "Please, dont leave empty cells", style: .alert)
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
