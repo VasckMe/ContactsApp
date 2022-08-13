@@ -13,7 +13,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EEj-sr-GM1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YN3-lz-Cfz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="person.3.sequence" catalog="system" id="YN3-lz-Cfz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,11 +234,11 @@
             </objects>
             <point key="canvasLocation" x="2195.6521739130435" y="65.625"/>
         </scene>
-        <!--Item-->
+        <!--Contacts-->
         <scene sceneID="48k-ou-74F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RZF-nc-Sha" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LQd-gJ-KEY"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.3.sequence.fill" catalog="system" id="LQd-gJ-KEY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sAr-4n-35w">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -424,6 +424,8 @@
     </scenes>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.3.sequence" catalog="system" width="128" height="59"/>
+        <image name="person.3.sequence.fill" catalog="system" width="128" height="58"/>
         <image name="phone.arrow.up.right" catalog="system" width="128" height="115"/>
         <image name="video" catalog="system" width="128" height="83"/>
         <systemColor name="systemGray4Color">
