@@ -16,13 +16,12 @@ class CustomTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    static var identifier = "CustomTableViewCell"
+    static let identifier = "CustomTableViewCell"
     
     //MARK: Init code
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-//        cellXIB.frame = contentView.bounds
         contentView.bounds = cellXIB.frame
         contentView.addSubview(cellXIB)
     }

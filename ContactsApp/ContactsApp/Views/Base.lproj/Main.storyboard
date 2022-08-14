@@ -230,8 +230,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailAddress" destination="0sF-Dg-MYK" id="nDV-HL-Zlm"/>
-                        <outlet property="phoneNumber" destination="TuB-D1-Nna" id="twV-Cw-8P0"/>
+                        <outlet property="emailLabel" destination="0sF-Dg-MYK" id="FPu-eY-8aO"/>
+                        <outlet property="phoneLabel" destination="TuB-D1-Nna" id="5YS-Ut-L6J"/>
                         <segue destination="w3d-xu-6d5" kind="show" identifier="GoToEditContactVC" id="Fgr-9d-7gk"/>
                     </connections>
                 </viewController>

@@ -7,20 +7,20 @@
 
 import UIKit
 // MARK: Protocol
-protocol UpdateContact {
-    func updateContact(model: Person)
+protocol UpdateContactInterface {
+    func updateContactInterface(model: Person)
 }
 
-class ContactViewController: UIViewController {
+final class ContactViewController: UIViewController {
 
     // MARK: IBOutlets
-    @IBOutlet private weak var phoneNumber: UILabel!
-    @IBOutlet private weak var emailAddress: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
     
     // MARK: Delegates and properties
     var model: Person?
     var newModel: Person?
-    var delegate: UpdateCell?
+    var delegate: UpdateCellDelegate?
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -28,27 +28,34 @@ class ContactViewController: UIViewController {
         fillPersonData()
     }
     // MARK: IBAction
-    @IBAction func callButton() {
-        alert(title: "Sorry =(",
-              message: "This function can not be used, please stay with us for update!",
-              style: .alert)
+    @IBAction private func callButton() {
+        alert(
+            title: "Sorry =(",
+            message: "This function can not be used, please stay with us for update!",
+            style: .alert)
     }
-    @IBAction func messageButton() {
-        alert(title: "Sorry =(",
-              message: "This function can not be used, please stay with us for update!",
-              style: .alert)
+    @IBAction private func messageButton() {
+        alert(
+            title: "Sorry =(",
+            message: "This function can not be used, please stay with us for update!",
+            style: .alert
+        )
     }
-    @IBAction func freeVideoCallButton() {
-        alert(title: "Sorry =(",
-              message: "This function can not be used, please stay with us for update!",
-              style: .alert)
+    @IBAction private func freeVideoCallButton() {
+        alert(
+            title: "Sorry =(",
+            message: "This function can not be used, please stay with us for update!",
+            style: .alert
+        )
     }
-    @IBAction func extraOutCallButton() {
-        alert(title: "Sorry =(",
-              message: "This function can not be used, please stay with us for update!",
-              style: .alert)
+    @IBAction private func extraOutCallButton() {
+        alert(
+            title: "Sorry =(",
+            message: "This function can not be used, please stay with us for update!",
+            style: .alert
+        )
     }
-    @IBAction func editButton() {
+    @IBAction private func editButton() {
         performSegue(withIdentifier: "GoToEditContactVC", sender: nil)
     }
     
@@ -56,8 +63,8 @@ class ContactViewController: UIViewController {
     private func fillPersonData() {
         if let unwrapModel = model {
             title = unwrapModel.name + " " + unwrapModel.surname
-            phoneNumber.text = unwrapModel.phone
-            emailAddress.text = unwrapModel.email
+            phoneLabel.text = unwrapModel.phone
+            emailLabel.text = unwrapModel.email
         }
     }
     
@@ -78,11 +85,11 @@ class ContactViewController: UIViewController {
 }
 
 // MARK: Extension
-extension ContactViewController: UpdateContact {
-    func updateContact(model: Person) {
+extension ContactViewController: UpdateContactInterface {
+    func updateContactInterface(model: Person) {
         title = model.name + " " + model.surname
-        phoneNumber.text = model.phone
-        emailAddress.text = model.email
-        delegate?.updateCell(person: model)
+        phoneLabel.text = model.phone
+        emailLabel.text = model.email
+        delegate?.updateCellDelegate(person: model)
     }
 }

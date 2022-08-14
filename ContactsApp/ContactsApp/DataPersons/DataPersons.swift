@@ -64,10 +64,14 @@ final class DataPersons {
         {
             let person = Person(name: name, surname: surname, email: email, phone: phone)
             
-            let nameIndex = nameList.firstIndex(of: name)!
-            let surnameIndex = surnameList.firstIndex(of: surname)!
-            let emailIndex = emails.firstIndex(of: email)!
-            let phoneIndex = phones.firstIndex(of: phone)!
+            guard
+                let nameIndex = nameList.firstIndex(of: name),
+                let surnameIndex = surnameList.firstIndex(of: surname),
+                let emailIndex = emails.firstIndex(of: email),
+                let phoneIndex = phones.firstIndex(of: phone)
+            else {
+                return nil
+            }
             
             phones.remove(at: phoneIndex)
             nameList.remove(at: nameIndex)

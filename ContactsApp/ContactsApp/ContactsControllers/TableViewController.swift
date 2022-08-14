@@ -7,11 +7,14 @@
 
 import UIKit
 
-protocol UpdateCell {
-    func updateCell(person: Person)
+protocol UpdateCellDelegate {
+    func updateCellDelegate(person: Person)
 }
 
-class TableViewController: UITableViewController {
+final class TableViewController: UITableViewController {
+    
+    let a: String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataPersons.fillPersonArray()
@@ -71,8 +74,8 @@ class TableViewController: UITableViewController {
     }
 }
 
-extension TableViewController: UpdateCell {
-    func updateCell(person: Person) {
+extension TableViewController: UpdateCellDelegate {
+    func updateCellDelegate(person: Person) {
         if
             let indexPathMy = tableView.indexPathForSelectedRow
         {

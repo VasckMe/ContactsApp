@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UIView {
+final class CustomCell: UIView {
 
     @IBOutlet weak var infoLabel: UILabel!
 

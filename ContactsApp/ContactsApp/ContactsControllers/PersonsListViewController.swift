@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonsListViewController: UIViewController {
+final class PersonsListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {

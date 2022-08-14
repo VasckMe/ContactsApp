@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditContactViewController: UIViewController {
+final class EditContactViewController: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet private weak var nameTextField: UITextField!
@@ -18,7 +18,7 @@ class EditContactViewController: UIViewController {
     
     // MARK: Delegates and Properties
     var model: Person?
-    var delegate: UpdateContact?
+    var delegate: UpdateContactInterface?
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -27,19 +27,19 @@ class EditContactViewController: UIViewController {
     }
     
     // MARK: IBActions
-    @IBAction func nameTextFieldAction() {
+    @IBAction private func nameTextFieldAction() {
         checkPersons()
     }
-    @IBAction func surnameTextFieldAction() {
+    @IBAction private func surnameTextFieldAction() {
         checkPersons()
     }
-    @IBAction func phoneTextFieldAction() {
+    @IBAction private func phoneTextFieldAction() {
         checkPersons()
     }
-    @IBAction func emailTextFieldAction() {
+    @IBAction private func emailTextFieldAction() {
         checkPersons()
     }
-    @IBAction func doneButtonAction() {
+    @IBAction private func doneButtonAction() {
         let name = nameTextField.text!
         let surname = surnameTextField.text!
         let email = emailTextField.text!
@@ -50,7 +50,7 @@ class EditContactViewController: UIViewController {
                             email: email,
                             phone: phone)
         
-        delegate?.updateContact(model: person)
+        delegate?.updateContactInterface(model: person)
         navigationController?.popViewController(animated: true)
     }
     
