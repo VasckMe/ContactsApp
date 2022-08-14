@@ -14,7 +14,7 @@ final class PersonsListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CustomTableViewCell.self,
+        tableView.register(UINib(nibName: CustomTableViewCell.identifier, bundle: nil),
                            forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
 }
@@ -50,9 +50,8 @@ extension PersonsListViewController: UITableViewDataSource {
             for: indexPath) as? CustomTableViewCell
         {
             let person = DataPersons.personArray[indexPath.row]
-            if indexPath.row == 0 { cell.refresh(sender: person.email) }
-            if indexPath.row == 1 { cell.refresh(sender: person.phone) }
-            cell.backgroundColor = .clear
+            if indexPath.row == 0 { cell.refresh(info: person.email) }
+            if indexPath.row == 1 { cell.refresh(info: person.phone) }
             return cell
         }
         return UITableViewCell()
