@@ -49,9 +49,13 @@ extension PersonsListViewController: UITableViewDataSource {
             withIdentifier: CustomTableViewCell.identifier,
             for: indexPath) as? CustomTableViewCell
         {
-            let person = DataPersons.personArray[indexPath.row]
-            if indexPath.row == 0 { cell.refresh(info: person.email) }
-            if indexPath.row == 1 { cell.refresh(info: person.phone) }
+            let person = DataPersons.personArray[indexPath.section]
+            if indexPath.row == 0 {
+                cell.refresh(info: person.email)
+            }
+            if indexPath.row == 1 {
+                cell.refresh(info: person.phone)
+            }
             return cell
         }
         return UITableViewCell()

@@ -32,7 +32,8 @@ final class ContactViewController: UIViewController {
         alert(
             title: "Sorry =(",
             message: "This function can not be used, please stay with us for update!",
-            style: .alert)
+            style: .alert
+        )
     }
     @IBAction private func messageButton() {
         alert(

@@ -12,9 +12,6 @@ protocol UpdateCellDelegate {
 }
 
 final class TableViewController: UITableViewController {
-    
-    let a: String? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataPersons.fillPersonArray()
@@ -22,10 +19,6 @@ final class TableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataPersons.personArray.count
@@ -76,12 +69,9 @@ final class TableViewController: UITableViewController {
 
 extension TableViewController: UpdateCellDelegate {
     func updateCellDelegate(person: Person) {
-        if
-            let indexPathMy = tableView.indexPathForSelectedRow
-        {
-            DataPersons.personArray.remove(at: indexPathMy.row)
-            DataPersons.personArray.insert(person, at: indexPathMy.row)
-            tableView.reloadData()
-        }
+        guard let indexPathMy = tableView.indexPathForSelectedRow else { return }
+        DataPersons.personArray.remove(at: indexPathMy.row)
+        DataPersons.personArray.insert(person, at: indexPathMy.row)
+        tableView.reloadData()
     }
 }

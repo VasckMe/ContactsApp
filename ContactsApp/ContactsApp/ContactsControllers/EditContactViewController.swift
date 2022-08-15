@@ -45,10 +45,12 @@ final class EditContactViewController: UIViewController {
         let email = emailTextField.text!
         let phone = phoneTextField.text!
         
-        let person = Person(name: name,
-                            surname: surname,
-                            email: email,
-                            phone: phone)
+        let person = Person(
+            name: name,
+            surname: surname,
+            email: email,
+            phone: phone
+        )
         
         delegate?.updateContactInterface(model: person)
         navigationController?.popViewController(animated: true)
